@@ -11,10 +11,27 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal"); // A/D
-        float moveVertical = Input.GetAxis("Vertical"); // W/S
+        float moveHorizontal = 0;
+        float moveVertical = 0;
 
-        Vector3 direction = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
+        if (Input.GetKey(KeyCode.W))
+        {
+            moveVertical = 1;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveVertical = -1;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveHorizontal = 1;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveHorizontal = -1;
+        }
+
+        Vector3 direction = new Vector3(moveHorizontal, 0f, moveVertical);
 
         if (direction.magnitude > 0)
         {
@@ -38,7 +55,6 @@ public class Player : MonoBehaviour
 
     private void MoveToDirection(Vector3 direction)
     {
-        // Перемещаем игрока
         transform.Translate(direction * movementSpeed * Time.deltaTime, Space.World);
     }
 }
