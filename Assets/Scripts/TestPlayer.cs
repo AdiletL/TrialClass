@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class TestPlayer : MonoBehaviour
 {
     [SerializeField] private PlayerAnimation playerAnimation;
-    [SerializeField] private PlayerJump playerJump;
+    [SerializeField] private TestPlayerJump playerJump;
     [SerializeField] private float movementSpeed = 5;
     [SerializeField] private float rotationSpeed = 700;
 

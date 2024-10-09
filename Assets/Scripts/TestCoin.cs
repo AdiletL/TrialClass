@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-public class Coin : MonoBehaviour
+public class TestCoin : MonoBehaviour
 {
     public static event Action OnCoin;
     private void Start()
@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out TestPlayer player))
         {
             OnCoin?.Invoke();
             Destroy(gameObject);

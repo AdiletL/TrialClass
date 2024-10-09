@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
-public class PlayerJump : MonoBehaviour
+public class TestPlayerJump : MonoBehaviour
 {
     private PlayerAnimation playerAnimation;
     public float jumpForce = 4f; // Сила прыжка
